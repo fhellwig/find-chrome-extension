@@ -61,14 +61,13 @@ function getChromeDirectory() {
   const home = process.env.HOME;
   const platform = process.platform;
   const directory = directories[platform];
-  if (!directory) {
-    throw new Error(`Unknown platform: ${platform}`);
+  if (directory) {
+    const abspath = path.join(home, ...directory);
+    if (isDirectory(abspath)) {
+      return abspath;
+    }
   }
-  const abspath = path.join(home, ...directory);
-  if (!isDirectory(abspath)) {
-    throw new Error(`Not a directory: ${abspath}`);
-  }
-  return abspath;
+  return null;
 }
 
 /**
@@ -78,6 +77,7 @@ function getChromeDirectory() {
 function getExtensionDirectories() {
   const directories = [];
   const chrome = getChromeDirectory();
+  if (!chrome) return [];
   const names = fs.readdirSync(chrome);
   for (const name of names) {
     const abspath = path.join(chrome, name, 'Extensions');
