@@ -1,0 +1,24 @@
+{
+  "name": "find-chrome-extension",
+  "version": "1.0.0",
+  "description": "Finds a Google Chrome extension by name",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fhellwig/find-chrome-extension.git"
+  },
+  "keywords": [
+    "Google",
+    "Chrome",
+    "Extension"
+  ],
+  "author": "Frank Hellwig <frank@hellwig.org>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fhellwig/find-chrome-extension/issues"
+  },
+  "homepage": "https://github.com/fhellwig/find-chrome-extension#readme"
+}
