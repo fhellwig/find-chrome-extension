@@ -3,9 +3,8 @@ const path = require('path');
 
 /**
  * Determines if the specified path is a directory.
- *
  * @param {string} abspath - the absolute path to check
- * @returns {boolean} - true if abspath is a directory
+ * @returns {boolean} true if abspath is a directory
  */
 function isDirectory(abspath) {
   if (fs.existsSync(abspath)) {
@@ -19,9 +18,8 @@ function isDirectory(abspath) {
 
 /**
  * Determines if the specified path is a file.
- *
  * @param {string} abspath - the absolute path to check
- * @returns {boolean} - true if abspath is a file
+ * @returns {boolean} true if abspath is a file
  */
 function isFile(abspath) {
   if (fs.existsSync(abspath)) {
@@ -35,9 +33,8 @@ function isFile(abspath) {
 
 /**
  * Gets all directories in the directory specified by the absolute path.
- *
  * @param {string} abspath - the absolute path of the directory
- * @returns {[string]} - an array of directories
+ * @returns {string[]} an array of directories
  */
 function getDirectories(abspath) {
   const directories = [];
@@ -53,8 +50,7 @@ function getDirectories(abspath) {
 
 /**
  * Finds the platform-specific Google Chrome directory.
- *
- * @returns {string} - the absolute path of the Chrome directory
+ * @returns {string} the absolute path of the Chrome directory
  */
 function getChromeDirectory() {
   const directories = {
@@ -77,8 +73,7 @@ function getChromeDirectory() {
 
 /**
  * Gets the extension directories from all Google Chrome profiles.
- *
- * @returns {[string]} - an array of directories
+ * @returns {string[]} an array of directories
  */
 function getExtensionDirectories() {
   const directories = [];
@@ -101,7 +96,7 @@ function getExtensionDirectories() {
  * Given an extension name, finds and returns the directory containing
  * that extension.
  * @param {string} name - the extension name
- * @returns {string} - the extension directory
+ * @returns {string} the extension directory
  */
 function findChromeExtension(name) {
   const directories = getExtensionDirectories();

@@ -24,6 +24,17 @@ The `console.log` statement should print the directory containing the extension 
 
 Currently, this utility works on Windows, macOS, and Linux. It searches the `Default` as well as all `Profile` directories.
 
+## Test
+
+1. Install the [React Developer Tools](chrome://extensions/?id=fmkadmapgofadopljbjfkapdkoienihi) Google Chrome extension.
+2. Run `npm install` to install the Mocha dev dependency.
+2. Run `npm test` to run the test.
+
 ## Motivation
 
-I wanted a utility whereby I could install the React Developer Tools in Electron using the React BrowswerWindow `addDevToolsExtension` method.
+I wanted a utility whereby I could install the React Developer Tools in Electron using the BrowswerWindow `addDevToolsExtension` method.
+
+## Notes
+
+1. Another option would have been to find the extension by ID but that would have added another step for the developer (i.e., determining the extension ID from the extension URL).
+2. It looks in all profiles and doesn't check the version number. It simply returns the first extension matching the name.
